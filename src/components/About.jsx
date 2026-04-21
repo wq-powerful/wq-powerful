@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Building2, FileText, Flag, Sparkles } from 'lucide-react'
 
 const steps = [
@@ -18,7 +18,7 @@ export function About() {
   return (
     <section id="about" className="relative min-h-screen flex items-center py-16 sm:py-20 xl:py-28 px-4 sm:px-6 xl:px-8 bg-[#fafafa]" aria-labelledby="about-heading">
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full">
-        <motion.div
+        <Motion.div
           className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,11 +32,11 @@ export function About() {
           <p className="text-[12px] sm:text-[13px] xl:text-[15px] 2xl:text-base text-slate-400 max-w-sm sm:max-w-lg xl:max-w-xl mx-auto leading-relaxed">
             过去 1 年多，我持续在真实客户场景中完成问题收集、需求整理、文档沉淀、用户培训与交付推进，逐步形成从问题识别到方案落地的完整闭环。
           </p>
-        </motion.div>
+        </Motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 xl:gap-6 mb-6 sm:mb-8 xl:mb-12">
           {steps.map((step, index) => (
-            <motion.div
+            <Motion.div
               key={step.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -49,11 +49,11 @@ export function About() {
               </div>
               <h3 className="text-[13px] sm:text-[14px] xl:text-base 2xl:text-lg font-semibold text-slate-900 mb-1 sm:mb-1.5">{step.title}</h3>
               <p className="text-[11px] sm:text-[12px] xl:text-sm 2xl:text-base text-slate-400 leading-relaxed">{step.desc}</p>
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: '-40px' }}
@@ -66,7 +66,7 @@ export function About() {
             {abilities.map((item, index) => {
               const Icon = item.icon
               return (
-                <motion.div
+                <Motion.div
                   key={index}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -80,11 +80,11 @@ export function About() {
                   <h4 className="text-[11px] sm:text-[12px] xl:text-sm 2xl:text-base font-semibold text-slate-900 mb-0.5">{item.title}</h4>
                   <div className={`text-[10px] sm:text-[11px] xl:text-xs 2xl:text-sm mb-1 sm:mb-1.5 ${item.highlight ? 'text-brand-500' : 'text-slate-400'}`}>{item.subtitle}</div>
                   <p className="text-[10px] sm:text-[11px] xl:text-xs 2xl:text-sm text-slate-400 leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </Motion.div>
               )
             })}
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

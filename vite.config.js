@@ -10,10 +10,4 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
   },
-  server: {
-    allowedHosts: true,
-  },
-  preview: {
-    allowedHosts: true,
-  },
 })

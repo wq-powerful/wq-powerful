@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Building2, FileText, Sparkles, Flag } from 'lucide-react'
 
 const cards = [
@@ -12,7 +12,7 @@ export function WhyMe() {
   return (
     <section id="why-me" className="relative min-h-screen flex items-center py-16 sm:py-24 xl:py-32 px-4 sm:px-6 xl:px-8 bg-white" aria-labelledby="whyme-heading">
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full">
-        <motion.div
+        <Motion.div
           className="text-center mb-8 sm:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,13 +25,13 @@ export function WhyMe() {
           <p className="text-[12px] sm:text-[13px] xl:text-[15px] 2xl:text-base text-slate-400 max-w-sm sm:max-w-lg xl:max-w-xl mx-auto leading-relaxed">
             我在真实项目中持续参与业务理解、需求整理、方案推进与交付培训，这些经历让我能够更快理解岗位要求，并在实际场景中推进事情落地。
           </p>
-        </motion.div>
+        </Motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 xl:gap-7">
           {cards.map((card, index) => {
             const Icon = card.icon
             return (
-              <motion.div
+              <Motion.div
                 key={index}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export function WhyMe() {
                     <p className="text-[10px] sm:text-[11px] xl:text-[13px] 2xl:text-sm text-slate-400 leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             )
           })}
         </div>

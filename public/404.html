@@ -2,12 +2,21 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <title>Olivia Wu - AI 产品经理</title>
+    <title>页面跳转中 | 吴倩 - AI 产品经理</title>
+    <meta name="robots" content="noindex" />
     <script>
-      // GitHub Pages SPA redirect
-      sessionStorage.redirect = location.href;
+      (function () {
+        var basePath = '/wq-powerful/';
+        var redirectPath = location.pathname + location.search + location.hash;
+        if (redirectPath !== basePath && !redirectPath.endsWith('/404.html')) {
+          sessionStorage.setItem('redirect', redirectPath);
+        }
+        location.replace(basePath);
+      })();
     </script>
-    <meta http-equiv="refresh" content="0;URL='/wq-powerful.github.io/'" />
+    <meta http-equiv="refresh" content="0; url=/wq-powerful/" />
   </head>
-  <body></body>
+  <body>
+    <p><a href="/wq-powerful/">返回站点首页</a></p>
+  </body>
 </html>

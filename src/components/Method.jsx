@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 const steps = [
   { number: '01', title: '先进入场景', desc: '先弄清楚是谁在用、卡在哪里、为什么卡，而不是直接从功能开始想。' },
@@ -11,7 +11,7 @@ export function Method() {
   return (
     <section id="method" className="relative min-h-screen flex items-center py-16 sm:py-24 xl:py-32 px-4 sm:px-6 xl:px-8 bg-white" aria-labelledby="method-heading">
       <div className="max-w-4xl xl:max-w-5xl 2xl:max-w-6xl 3xl:max-w-7xl mx-auto w-full">
-        <motion.div
+        <Motion.div
           className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export function Method() {
           <p className="text-[13px] sm:text-[14px] xl:text-base 2xl:text-lg text-slate-400 max-w-sm sm:max-w-lg xl:max-w-xl mx-auto leading-relaxed">
             我理解的 AI 产品经理，不是把模型接进来就结束了，而是把业务问题、方案表达、快速验证和落地反馈接成一条连续链路。
           </p>
-        </motion.div>
+        </Motion.div>
 
         {/* 横向时间线 */}
         <div className="relative">
@@ -32,7 +32,7 @@ export function Method() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 xl:gap-12">
             {steps.map((step, index) => (
-              <motion.div
+              <Motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export function Method() {
                 </div>
                 <h3 className="text-[13px] sm:text-[14px] xl:text-base 2xl:text-lg font-semibold text-slate-900 mb-1.5 sm:mb-2.5">{step.title}</h3>
                 <p className="text-[11px] sm:text-[12px] xl:text-sm 2xl:text-base text-slate-400 leading-relaxed">{step.desc}</p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>

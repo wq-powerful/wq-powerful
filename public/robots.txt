@@ -1,6 +1,6 @@
-# robots.txt for wq-powerful.github.io
+# robots.txt for https://wq-powerful.github.io/wq-powerful/
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://wq-powerful.github.io/sitemap.xml
+Sitemap: https://wq-powerful.github.io/wq-powerful/sitemap.xml

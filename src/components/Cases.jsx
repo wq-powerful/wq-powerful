@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Layers, Cpu, Truck } from 'lucide-react'
 
 const projects = [
@@ -41,11 +41,11 @@ export function Cases() {
     <section id="cases" className="relative min-h-screen flex items-center py-16 sm:py-20 xl:py-28 px-4 sm:px-6 xl:px-8 bg-[#fafafa]" aria-labelledby="cases-heading">
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full">
         {/* 标题 */}
-        <motion.div className="text-center mb-6 sm:mb-8" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <Motion.div className="text-center mb-6 sm:mb-8" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}>
           <div className="text-brand-500 text-[11px] xl:text-xs 2xl:text-sm font-medium tracking-widest uppercase mb-2 sm:mb-3">Projects</div>
           <h2 className="text-[24px] sm:text-[28px] md:text-[36px] xl:text-[42px] 2xl:text-[48px] font-bold text-slate-900 tracking-tight mb-2 sm:mb-3 xl:mb-4" id="cases-heading">重点项目</h2>
           <p className="text-[12px] sm:text-[13px] xl:text-[15px] 2xl:text-base text-slate-400 max-w-sm sm:max-w-md xl:max-w-lg mx-auto">以下案例展示了我如何把复杂业务问题转化为可推进的方案，并在真实项目中完成落地。</p>
-        </motion.div>
+        </Motion.div>
 
         {/* Tab 导航 — 移动端可横滑 */}
         <div className="flex justify-start sm:justify-center gap-2 sm:gap-2.5 xl:gap-3 mb-5 sm:mb-7 xl:mb-9 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
@@ -70,7 +70,7 @@ export function Cases() {
 
         {/* 内容区 */}
         <AnimatePresence mode="wait">
-          <motion.div
+          <Motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export function Cases() {
                 {/* 动作列表 */}
                 <div className="space-y-2.5 sm:space-y-3 mb-3 sm:mb-4">
                   {p.actions.map((action, i) => (
-                    <motion.div
+                    <Motion.div
                       key={`${activeTab}-${i}`}
                       initial={{ opacity: 0, x: -12 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -111,7 +111,7 @@ export function Cases() {
                     >
                       <span className="flex-shrink-0 w-5 h-5 xl:w-6 xl:h-6 rounded-md bg-brand-500 text-white text-[10px] xl:text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
                       <span className="leading-relaxed">{action}</span>
-                    </motion.div>
+                    </Motion.div>
                   ))}
                 </div>
 
@@ -134,7 +134,7 @@ export function Cases() {
               {/* 右侧指标 — 移动端横排，桌面端竖排 */}
               <div className="flex flex-row md:flex-col justify-around md:justify-center gap-3 sm:gap-5 xl:gap-7 px-4 sm:px-5 xl:px-7 py-4 sm:py-6 xl:py-8 border-t md:border-t-0 md:border-l border-slate-100 bg-[#fafafa]/50">
                 {p.metrics.map((m, i) => (
-                  <motion.div
+                  <Motion.div
                     key={`${activeTab}-m-${i}`}
                     className="text-center"
                     initial={{ opacity: 0, y: 8 }}
@@ -143,11 +143,11 @@ export function Cases() {
                   >
                     <div className="text-[18px] sm:text-[22px] xl:text-[28px] 2xl:text-[32px] font-bold text-brand-500 tracking-tight leading-none">{m.value}</div>
                     <div className="text-[9px] sm:text-[10px] xl:text-xs 2xl:text-sm text-slate-400 mt-1">{m.label}</div>
-                  </motion.div>
+                  </Motion.div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         </AnimatePresence>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Mail, Phone, Github } from 'lucide-react'
 
 const contacts = [
@@ -12,7 +12,7 @@ export function Contact() {
     <footer id="contact" className="relative min-h-screen flex items-center py-16 sm:py-24 xl:py-32 px-4 sm:px-6 xl:px-8 bg-white" aria-labelledby="contact-heading">
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full">
         {/* 标题区 */}
-        <motion.div
+        <Motion.div
           className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,10 +26,10 @@ export function Contact() {
           <p className="text-[12px] sm:text-[13px] xl:text-[15px] 2xl:text-base text-slate-400 max-w-sm sm:max-w-md xl:max-w-lg mx-auto leading-relaxed">
             如果您对我的经历或项目感兴趣，欢迎通过以下方式与我取得联系
           </p>
-        </motion.div>
+        </Motion.div>
 
         {/* 联系方式 */}
-        <motion.div
+        <Motion.div
           className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 xl:gap-6 max-w-sm sm:max-w-2xl xl:max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export function Contact() {
               </a>
             )
           })}
-        </motion.div>
+        </Motion.div>
       </div>
     </footer>
   )

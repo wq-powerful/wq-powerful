@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 const experiences = [
   { company: '深圳信息职业技术大学', role: '校企合作', type: '授课 / 教学设计 / 实训手册', desc: '沉淀 10+ 项教学资产供后续复用，助力 2 名学生获得实习机会。负责授课 PPT、讲解路径设计、教学版软件适配。' },
@@ -17,7 +17,7 @@ export function Experience() {
   return (
     <section id="experience" className="relative min-h-screen flex items-center py-20 px-6 bg-dark-bg" aria-labelledby="exp-heading">
       <div className="max-w-5xl mx-auto w-full">
-        <motion.div
+        <Motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,11 +27,11 @@ export function Experience() {
           <div className="text-brand-400 text-[11px] font-medium tracking-widest uppercase mb-3">Experience</div>
           <h2 className="text-[28px] md:text-[36px] font-bold text-white tracking-tight mb-3" id="exp-heading">更多经历</h2>
           <p className="text-[13px] text-slate-400 max-w-md mx-auto leading-relaxed">在多个行业场景中积累的交付、培训和产品化经验</p>
-        </motion.div>
+        </Motion.div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           {experiences.map((exp, index) => (
-            <motion.div
+            <Motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -46,11 +46,11 @@ export function Experience() {
               </div>
               <div className="text-[10px] text-slate-500 tracking-wide uppercase mb-2">{exp.type}</div>
               <p className="text-[12px] text-slate-400 leading-relaxed">{exp.desc}</p>
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
 
-        <motion.div
+        <Motion.div
           className="flex justify-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export function Experience() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

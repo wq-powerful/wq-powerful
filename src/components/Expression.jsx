@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Mic, FileText, Users, BookOpen } from 'lucide-react'
 
 const cards = [
@@ -31,7 +31,7 @@ export function Expression() {
       <div className="absolute bottom-0 left-0 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-brand-500/[0.02] rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
 
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full relative">
-        <motion.div
+        <Motion.div
           className="text-center mb-6 sm:mb-8 xl:mb-10"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,14 +48,14 @@ export function Expression() {
           <p className="text-[13px] sm:text-[14px] xl:text-base 2xl:text-lg text-slate-400 max-w-sm sm:max-w-lg xl:max-w-xl mx-auto leading-[1.8]">
             擅长把复杂产品逻辑转化为可讲、可学、可执行的材料——帮助团队与客户真正用起来，降低重复讲解成本，提升交付复用效率
           </p>
-        </motion.div>
+        </Motion.div>
 
         {/* 主卡片区 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 xl:gap-7 mb-6 sm:mb-8 xl:mb-8">
           {cards.map((item, index) => {
             const Icon = item.icon
             return (
-              <motion.div
+              <Motion.div
                 key={index}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export function Expression() {
 
                 <div className="p-5 sm:p-5 xl:p-6">
                   <div className="flex items-center gap-3 xl:gap-4 mb-3 sm:mb-4">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 xl:w-13 xl:h-13 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-500 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 xl:w-[52px] xl:h-[52px] rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-500 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6" />
                     </div>
                     <h3 className="text-[15px] sm:text-[16px] xl:text-lg 2xl:text-xl font-semibold text-slate-900 group-hover:text-brand-600 transition-colors duration-300">{item.title}</h3>
@@ -79,7 +79,7 @@ export function Expression() {
 
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {item.tags.map((tag, i) => (
-                      <motion.span
+                      <Motion.span
                         key={tag}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -88,17 +88,17 @@ export function Expression() {
                         className="px-2.5 sm:px-3 xl:px-4 py-1 xl:py-1.5 bg-[#fafafa] text-slate-500 text-[10px] sm:text-[11px] xl:text-xs 2xl:text-sm font-medium rounded-lg border border-slate-100 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-all duration-300 cursor-default"
                       >
                         {tag}
-                      </motion.span>
+                      </Motion.span>
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </Motion.div>
             )
           })}
         </div>
 
         {/* 底部数据条 */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
@@ -123,7 +123,7 @@ export function Expression() {
               )
             })}
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

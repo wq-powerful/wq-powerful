@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-const heroPhoto = '/assets/zp1.jpg'
+const heroPhoto = `${import.meta.env.BASE_URL}assets/zp1.jpg`
 
 const pipelineSteps = ['客户现场', '需求整理', '方案表达', '培训赋能', '交付闭环', 'AI 提效']
 
@@ -11,7 +11,7 @@ export function Hero() {
       <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto w-full">
         <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-10 sm:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24 items-center">
           {/* 左侧 */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
@@ -48,10 +48,10 @@ export function Hero() {
                 <span key={i} className={`px-2 sm:px-4 xl:px-5 ${i > 0 ? 'border-l border-slate-200' : ''}`}>{item}</span>
               ))}
             </div>
-          </motion.div>
+          </Motion.div>
 
           {/* 右侧 */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
@@ -62,7 +62,7 @@ export function Hero() {
                 src={heroPhoto}
                 alt="吴倩个人照片"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
                 width="240"
                 height="288"
                 className="w-full h-full object-cover"
@@ -74,7 +74,7 @@ export function Hero() {
             <div className="w-full max-w-[280px] sm:max-w-[300px] xl:max-w-[360px]">
               <div className="relative flex flex-wrap justify-center gap-x-2 sm:gap-x-3 gap-y-2 sm:gap-y-2.5">
                 {pipelineSteps.map((step, i) => (
-                  <motion.div
+                  <Motion.div
                     key={step}
                     initial={{ opacity: 0, scale: 0.85 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -83,15 +83,15 @@ export function Hero() {
                     <div className={`px-3 sm:px-3.5 xl:px-4 py-1 sm:py-1.5 xl:py-2 rounded-full text-[10px] sm:text-[11px] xl:text-xs 2xl:text-sm font-medium border cursor-default transition-all duration-300 hover:shadow-[0_2px_12px_-3px_rgba(31,163,122,0.2)] hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 ${
                       i === pipelineSteps.length - 1
                         ? 'bg-brand-50 text-brand-600 border-brand-200'
-                        : 'bg-white text-slate-500 border-slate-150 shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
+                        : 'bg-white text-slate-500 border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]'
                     }`}>
                       {step}
                     </div>
-                  </motion.div>
+                  </Motion.div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

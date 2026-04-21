@@ -16,25 +16,25 @@
     <meta name="robots" content="index, follow, max-snippet:150, max-image-preview:large" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://wq-powerful.github.io/" />
+    <link rel="canonical" href="https://wq-powerful.github.io/wq-powerful/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://wq-powerful.github.io/" />
+    <meta property="og:url" content="https://wq-powerful.github.io/wq-powerful/" />
     <meta property="og:title" content="吴倩 | AI 产品经理候选人 - 业务现场驱动的产品思维" />
     <meta property="og:description" content="更接近业务现场的 AI 产品经理。1+年产品经验，6个交付项目，擅长需求整理、培训赋能与 AI 工具实践。" />
     <meta property="og:site_name" content="Olivia Wu Portfolio" />
     <meta property="og:locale" content="zh_CN" />
-    <meta property="og:image" content="https://wq-powerful.github.io/assets/profile-photo.jpg" />
+    <meta property="og:image" content="https://wq-powerful.github.io/wq-powerful/assets/profile-photo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://wq-powerful.github.io/" />
+    <meta property="twitter:url" content="https://wq-powerful.github.io/wq-powerful/" />
     <meta property="twitter:title" content="吴倩 | AI 产品经理候选人" />
     <meta property="twitter:description" content="更接近业务现场的 AI 产品经理。1+年产品经验，6个交付项目，擅长需求整理、培训赋能与 AI 工具实践。" />
-    <meta property="twitter:image" content="https://wq-powerful.github.io/assets/profile-photo.jpg" />
+    <meta property="twitter:image" content="https://wq-powerful.github.io/wq-powerful/assets/profile-photo.jpg" />
 
     <!-- Theme Color - Apple Style -->
     <meta name="theme-color" content="#FFFFFF" />
@@ -47,11 +47,15 @@
 
     <!-- GitHub Pages SPA redirect handler -->
     <script>
-      (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
+      (function () {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          var normalizedRedirect = redirect.charAt(0) === '/' ? redirect : '/' + redirect;
+          var current = location.pathname + location.search + location.hash;
+          if (normalizedRedirect !== current) {
+            history.replaceState(null, '', normalizedRedirect);
+          }
         }
       })();
     </script>
@@ -65,7 +69,7 @@
       "alternateName": "Olivia Wu",
       "jobTitle": "AI 产品经理",
       "description": "更接近业务现场的 AI 产品经理，擅长需求整理、培训赋能与 AI 工具实践",
-      "url": "https://wq-powerful.github.io/",
+      "url": "https://wq-powerful.github.io/wq-powerful/",
       "email": "2541830361@qq.com",
       "telephone": "+86-19101469874",
       "sameAs": [
