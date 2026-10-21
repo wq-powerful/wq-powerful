@@ -4,6 +4,10 @@
 
 **在线访问：https://wq-powerful.github.io/wq-powerful/**
 
+**产品经理作品集：https://wq-powerful.github.io/wq-powerful/portfolio/**
+
+作品集保留 PCBA 看板交互原型、AI 工作助手桌面端与网页端界面，支持章节导航和打印保存。
+
 ## 功能板块
 
 | 板块 | 说明 |
